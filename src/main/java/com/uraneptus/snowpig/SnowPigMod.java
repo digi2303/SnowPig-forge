@@ -53,8 +53,6 @@ public class SnowPigMod {
 
         SPSounds.SOUNDS.register(bus);
         SPItems.ITEMS.register(bus);
-        SPMobEffects.EFFECTS.register(bus);
-        SPPotions.POTIONS.register(bus);
         SPEntityTypes.ENTITY_TYPES.register(bus);
         SPLootPoolEntryTypes.LOOT_ENTRY.register(bus);
 
