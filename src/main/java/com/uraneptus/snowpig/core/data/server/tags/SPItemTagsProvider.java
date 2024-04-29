@@ -9,7 +9,7 @@ import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -25,5 +25,6 @@ public class SPItemTagsProvider extends ItemTagsProvider {
         //Mod Tags
         tag(SPItemTags.KNIVES);
         tag(ItemTags.MUSIC_DISCS).add(SPItems.MUSIC_DISC_FROSTY_SNIG.get());
+        tag(ItemTags.WOLF_FOOD).add(SPItems.FROZEN_PORKCHOP.get());
     }
 }

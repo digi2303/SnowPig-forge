@@ -11,15 +11,15 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
 import java.util.function.Supplier;
 
-@Mod.EventBusSubscriber(modid = SnowPigMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = SnowPigMod.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class SPClientEvents {
 
     @SubscribeEvent
@@ -44,13 +44,12 @@ public class SPClientEvents {
 
         if (ModIntegrations.IS_FD_LOADED) {
             if (!ModIntegrations.IS_AD_LOADED) {
+                /*
                 if (tab == ModIntegrations.getFdTab()) {
                     addBefore(ModIntegrations.getHam(), SPItems.FROZEN_HAM, event);
                 }
-            }
-        } else {
-            if (tabKey == CreativeModeTabs.FOOD_AND_DRINKS) {
-                addAfter(Items.COOKED_PORKCHOP, SPItems.FROZEN_HAM, event);
+
+                 */
             }
         }
     }

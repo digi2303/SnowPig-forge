@@ -5,7 +5,7 @@
       "bonus_rolls": 0.0,
       "entries": [
         {
-          "type": "snowpig:item",
+          "type": "minecraft:item",
           "functions": [
             {
               "add": false,
@@ -42,7 +42,7 @@
           "name": "snowpig:frozen_porkchop"
         },
         {
-          "type": "snowpig:item",
+          "type": "minecraft:item",
           "conditions": [
             {
               "condition": "minecraft:entity_properties",
@@ -50,7 +50,7 @@
               "predicate": {
                 "equipment": {
                   "mainhand": {
-                    "tag": "farmersdelight:tools/knives"
+                    "items": "#farmersdelight:tools/knives"
                   }
                 }
               }
@@ -86,7 +86,7 @@
       "bonus_rolls": 0.0,
       "entries": [
         {
-          "type": "snowpig:item",
+          "type": "minecraft:item",
           "conditions": [
             {
               "condition": "minecraft:entity_properties",

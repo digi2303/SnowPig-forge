@@ -6,7 +6,8 @@ import com.uraneptus.snowpig.core.registry.SPEntityTypes;
 import com.uraneptus.snowpig.core.registry.SPSounds;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
@@ -19,6 +20,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.loot.LootTable;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -26,7 +28,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 public class SnowPig extends Pig {
-    public static final ResourceLocation FROZEN_HAM_LOOT = SnowPigMod.modPrefix("entities/mod_integration/frozen_ham_loot");
+    public static final ResourceKey<LootTable> FROZEN_HAM_LOOT = ResourceKey.create(Registries.LOOT_TABLE, SnowPigMod.modPrefix("entities/mod_integration/frozen_ham_loot"));
 
     public SnowPig(EntityType<? extends SnowPig> entityType, Level level) {
         super(entityType, level);
@@ -41,7 +43,7 @@ public class SnowPig extends Pig {
     }
 
     @NotNull
-    public ResourceLocation getDefaultLootTable() {
+    public ResourceKey<LootTable> getDefaultLootTable() {
         if (ModIntegrations.IS_FD_LOADED) {
             return FROZEN_HAM_LOOT;
         }

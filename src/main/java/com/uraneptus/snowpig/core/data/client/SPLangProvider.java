@@ -5,10 +5,7 @@ import com.uraneptus.snowpig.core.registry.SPEntityTypes;
 import com.uraneptus.snowpig.core.registry.SPItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.PotionUtils;
-import net.minecraftforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.common.data.LanguageProvider;
 
 import java.util.function.Supplier;
 
@@ -40,12 +37,5 @@ public class SPLangProvider extends LanguageProvider {
         String disc = item.get().getDescriptionId();
         add(disc, "Music Disc");
         add(disc + ".desc", description);
-    }
-
-    public void addPotionsForEffect(Supplier<? extends Potion> potionEffect, String name) {
-        add(PotionUtils.setPotion(Items.POTION.getDefaultInstance(), potionEffect.get()), "Potion of " + name);
-        add(PotionUtils.setPotion(Items.SPLASH_POTION.getDefaultInstance(), potionEffect.get()), "Splash Potion of " + name);
-        add(PotionUtils.setPotion(Items.LINGERING_POTION.getDefaultInstance(), potionEffect.get()), "Lingering Potion of " + name);
-        add(PotionUtils.setPotion(Items.TIPPED_ARROW.getDefaultInstance(), potionEffect.get()), "Arrow of " + name);
     }
 }

@@ -1,11 +1,11 @@
 package com.uraneptus.snowpig.core.data;
 
 import com.uraneptus.snowpig.SnowPigMod;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.client.model.generators.ModelProvider;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.client.model.generators.ModelProvider;
 
 @SuppressWarnings("unused")
 public class SPDatagenUtil {
@@ -15,11 +15,11 @@ public class SPDatagenUtil {
     public static final String SPAWN_EGG = "item/template_spawn_egg";
 
     public static String name(Block block) {
-        return ForgeRegistries.BLOCKS.getKey(block).getPath();
+        return BuiltInRegistries.BLOCK.getKey(block).getPath();
     }
 
     public static String name(Item item) {
-        return ForgeRegistries.ITEMS.getKey(item).getPath();
+        return BuiltInRegistries.ITEM.getKey(item).getPath();
     }
 
     public static ResourceLocation modBlockLocation(String path) {
