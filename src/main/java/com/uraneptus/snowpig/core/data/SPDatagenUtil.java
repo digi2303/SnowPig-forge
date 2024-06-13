@@ -31,11 +31,11 @@ public class SPDatagenUtil {
     }
 
     public static ResourceLocation vanillaBlockLocation(String path) {
-        return new ResourceLocation(ModelProvider.BLOCK_FOLDER + "/" + path);
+        return ResourceLocation.withDefaultNamespace(ModelProvider.BLOCK_FOLDER + "/" + path);
     }
 
     public static ResourceLocation vanillaItemLocation(String path) {
-        return new ResourceLocation(ModelProvider.ITEM_FOLDER + "/" + path);
+        return ResourceLocation.withDefaultNamespace(ModelProvider.ITEM_FOLDER + "/" + path);
     }
 
     public static ResourceLocation craftingPath(String name) {

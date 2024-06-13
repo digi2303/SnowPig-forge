@@ -21,6 +21,6 @@ public class SPEntityTagsProvider extends EntityTypeTagsProvider {
     protected void addTags(HolderLookup.Provider pProvider) {
         tag(SPEntityTags.KILLER_FOR_SNOWPIG_DISC)
                 .add(EntityType.STRAY)
-                .addOptional(new ResourceLocation("tinyskeletons", "baby_stray"));
+                .addOptional(ResourceLocation.fromNamespaceAndPath("tinyskeletons", "baby_stray"));
     }
 }

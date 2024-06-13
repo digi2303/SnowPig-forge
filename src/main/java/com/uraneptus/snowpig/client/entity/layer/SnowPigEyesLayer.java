@@ -22,6 +22,6 @@ public class SnowPigEyesLayer extends RenderLayer<SnowPig, PigModel<SnowPig>> {
     @Override
     public void render(PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn, SnowPig entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
         VertexConsumer iVertexBuilder = bufferIn.getBuffer(RenderType.eyes(TEXTURE));
-        this.getParentModel().renderToBuffer(matrixStackIn, iVertexBuilder, packedLightIn, OverlayTexture.NO_OVERLAY, 1.0f, 1.0f, 1.0f, 1.0f);
+        this.getParentModel().renderToBuffer(matrixStackIn, iVertexBuilder, 16777215, OverlayTexture.NO_OVERLAY);
     }
 }

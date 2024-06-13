@@ -6,6 +6,7 @@ import com.uraneptus.snowpig.core.data.client.SPLangProvider;
 import com.uraneptus.snowpig.core.data.client.SPSoundDefinitionsProvider;
 import com.uraneptus.snowpig.core.data.server.SPRecipeProvider;
 import com.uraneptus.snowpig.core.data.server.datapack_registries.SPBiomeModifiers;
+import com.uraneptus.snowpig.core.data.server.datapack_registries.SPJukeboxSongProvider;
 import com.uraneptus.snowpig.core.data.server.loot.SPLootTableProvider;
 import com.uraneptus.snowpig.core.data.server.tags.SPBiomeTagsProvider;
 import com.uraneptus.snowpig.core.data.server.tags.SPBlockTagsProvider;
@@ -17,6 +18,7 @@ import com.uraneptus.snowpig.core.registry.SPItems;
 import com.uraneptus.snowpig.core.registry.SPSounds;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -38,10 +40,12 @@ import java.util.concurrent.CompletableFuture;
 @Mod(SnowPigMod.MOD_ID)
 public class SnowPigMod {
     public static final String MOD_ID = "snowpig";
-    private static final RegistrySetBuilder SET_BUILDER = new RegistrySetBuilder().add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, SPBiomeModifiers::create);
+    private static final RegistrySetBuilder SET_BUILDER = new RegistrySetBuilder()
+            .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, SPBiomeModifiers::create)
+            .add(Registries.JUKEBOX_SONG, SPJukeboxSongProvider::create);
 
     public static ResourceLocation modPrefix(String path) {
-        return new ResourceLocation(SnowPigMod.MOD_ID, path);
+        return ResourceLocation.fromNamespaceAndPath(SnowPigMod.MOD_ID, path);
     }
 
     public SnowPigMod(IEventBus bus) {

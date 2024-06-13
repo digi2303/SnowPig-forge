@@ -20,7 +20,8 @@ public class SPLangProvider extends LanguageProvider {
         addItem(SPItems.FROZEN_PORKCHOP, "Frozen Porkchop");
         addItem(SPItems.FROZEN_HAM, "Frozen Ham");
         addItem(SPItems.SNOW_PIG_EGG, "Snow Pig Spawn Egg");
-        addMusicDisc(SPItems.MUSIC_DISC_FROSTY_SNIG, "Luz - Frosty Snig");
+        addItem(SPItems.MUSIC_DISC_FROSTY_SNIG, "Music Disc");
+        add("jukebox_song.snowpig.frosty_snig", "Luz - Frosty Snig");
 
         addEntityType(SPEntityTypes.SNOW_PIG, "Snow Pig");
 
@@ -31,11 +32,5 @@ public class SPLangProvider extends LanguageProvider {
 
     public void addSubtitles(String path, String name) {
         add("subtitles." + path, name);
-    }
-
-    public void addMusicDisc(Supplier<? extends Item> item, String description) {
-        String disc = item.get().getDescriptionId();
-        add(disc, "Music Disc");
-        add(disc + ".desc", description);
     }
 }

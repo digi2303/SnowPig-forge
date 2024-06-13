@@ -8,6 +8,6 @@ import net.minecraft.world.item.Item;
 
 public class SPItemTags {
 
-    public static final TagKey<Item> KNIVES = TagKey.create(Registries.ITEM, new ResourceLocation(ModIntegrations.FD_MODID, "tools/knives"));
+    public static final TagKey<Item> KNIVES = TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ModIntegrations.FD_MODID, "tools/knives"));
 
 }

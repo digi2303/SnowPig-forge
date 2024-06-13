@@ -24,7 +24,7 @@ public class SPItemTagsProvider extends ItemTagsProvider {
     protected void addTags(HolderLookup.Provider pProvider) {
         //Mod Tags
         tag(SPItemTags.KNIVES);
-        tag(ItemTags.MUSIC_DISCS).add(SPItems.MUSIC_DISC_FROSTY_SNIG.get());
+        //tag(ItemTags.MUSIC_DISCS).add(SPItems.MUSIC_DISC_FROSTY_SNIG.get());
         tag(ItemTags.WOLF_FOOD).add(SPItems.FROZEN_PORKCHOP.get());
     }
 }

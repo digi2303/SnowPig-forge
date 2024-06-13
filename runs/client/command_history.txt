@@ -1,2 +1,0 @@
-/locate biome #c:is_snowy
-/tp @s 68 71 -22
